@@ -44,8 +44,7 @@ const updateFlag = (element) =>{
 
 }
 
-btn.addEventListener("click",async (evt)=>{
-    evt.preventDefault();
+let updateExchangerate = async () => {
     let amountValue = amount.value;
     if(amountValue ==="" || amountValue<0){
         amountValue=1;
@@ -64,10 +63,16 @@ btn.addEventListener("click",async (evt)=>{
     } catch(err){
         console.error(err);
     }
+}
 
-
-    
+btn.addEventListener("click", (evt)=>{
+    evt.preventDefault();
 })
+
+window.addEventListener("load",()=>{
+    updateExchangerate();    
+})
+
 
 
 
